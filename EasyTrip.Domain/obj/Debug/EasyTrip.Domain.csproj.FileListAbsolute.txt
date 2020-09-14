@@ -1,0 +1,12 @@
+D:\4.WebCalismalar\EasyTrip\EasyTrip.Domain\bin\Debug\EasyTrip.Domain.dll
+D:\4.WebCalismalar\EasyTrip\EasyTrip.Domain\bin\Debug\EasyTrip.Domain.pdb
+D:\4.WebCalismalar\EasyTrip\EasyTrip.Domain\bin\Debug\EasyTrip.Core.dll
+D:\4.WebCalismalar\EasyTrip\EasyTrip.Domain\bin\Debug\EntityFramework.dll
+D:\4.WebCalismalar\EasyTrip\EasyTrip.Domain\bin\Debug\EasyTrip.Core.pdb
+D:\4.WebCalismalar\EasyTrip\EasyTrip.Domain\bin\Debug\EasyTrip.Core.dll.config
+D:\4.WebCalismalar\EasyTrip\EasyTrip.Domain\bin\Debug\EntityFramework.xml
+D:\4.WebCalismalar\EasyTrip\EasyTrip.Domain\obj\Debug\EasyTrip.Domain.csprojAssemblyReference.cache
+D:\4.WebCalismalar\EasyTrip\EasyTrip.Domain\obj\Debug\EasyTrip.Domain.csproj.CoreCompileInputs.cache
+D:\4.WebCalismalar\EasyTrip\EasyTrip.Domain\obj\Debug\EasyTrip.Domain.csproj.CopyComplete
+D:\4.WebCalismalar\EasyTrip\EasyTrip.Domain\obj\Debug\EasyTrip.Domain.dll
+D:\4.WebCalismalar\EasyTrip\EasyTrip.Domain\obj\Debug\EasyTrip.Domain.pdb

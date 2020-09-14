@@ -1,0 +1,49 @@
+﻿@model Contact
+@{
+    ViewBag.Title = "Contact";
+}
+<div class="contact">
+    <div class="wrap">
+        <div class="contact-top">
+            <h1 style="font-size: 30px; color: #a2365a; font-family:Century Gothic,Helvetica,sans-serif; margin-top:15px; margin-bottom:15px;">İletişim</h1>
+            <p>Görmek istediğiniz yerler hakkında bilgi almak için bize mesaj gönderin ve dediğiniz yerlere seyahat etmiş isek sayfamızdan kısa bir süre sonra bilgi alabilirsiniz, gitmemiş isek en kısa zamanda size dönüş yapılacak ve istediğiniz yere seyahat planlaması yapılacaktır.</p>
+            @if (TempData["Message"] != null)
+            {
+                if ((bool)TempData["Message"] == true)
+                {
+                    <div id="alert" class="alert alert-info">Mesajınız Gönderilmiştir. En kısa sürede dönüş yapılacaktır.</div>
+                }
+                else
+                {
+                    <div id="alert" class="alert alert-danger">Mesajınız gönderilemedi!!</div>
+                }
+            }
+        </div>
+        @using (Html.BeginForm("Contact", "Home", FormMethod.Post))
+        {
+            @Html.TextBoxFor(x => x.FullName, new { @class = "form-control", @placeholder = "Kullanıcı Adı", @required = true })
+            <br />
+            @Html.TextBoxFor(x => x.Email, new { @class = "form-control", @placeholder = "Mail", @required = true })
+            <br />
+            @Html.TextAreaFor(x => x.Message, new { @class = "form-control", @placeholder = "Mesajınız..", @required = true })
+            <br />
+            <input type="submit" name="name" value="Gönder" class="read" />
+        }
+
+        <div class="clear"></div>
+        <div class="contact-bottom">
+            <div class="contact-left">
+                <div class="contact-add" style="margin-top:8px;">
+                    <h3>İletişim</h3>
+                    <p><b>Telefon: </b><a href="tel:0505 282 01 97">0505 282 01 97</a></p>
+                    <p><b>Email: </b><a href="mailto:halistascigul@gmail.com">halistascigul@gmail.com</a></p>
+                </div>
+            </div>
+            <div class="contact-map">
+                <iframe width="580" height="250" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3059.3320963116016!2d32.693673715267586!3d39.93396067942418!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d3381ff4ae7473%3A0x26454890b1971328!2sDenizkent%20Lojmanlar%C4%B1!5e0!3m2!1str!2str!4v1598280816276!5m2!1str!2str"></iframe><br><small><a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3059.3320963116016!2d32.693673715267586!3d39.93396067942418!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d3381ff4ae7473%3A0x26454890b1971328!2sDenizkent%20Lojmanlar%C4%B1!5e0!3m2!1str!2str!4v1598280816276!5m2!1str!2str" style="color: #555;text-align:left">View Larger Map</a></small>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>

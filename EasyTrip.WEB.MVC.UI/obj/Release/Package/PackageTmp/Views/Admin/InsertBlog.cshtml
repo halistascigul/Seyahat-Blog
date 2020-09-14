@@ -1,0 +1,21 @@
+﻿@model Blog
+@{
+    ViewBag.Title = "InsertBlog";
+    Layout = "~/Views/Admin/_adminLayout.cshtml";
+}
+<div class="container">
+    <h2 class="text-center" style="margin-top:20px;">Yeni Blog Ekleme</h2>
+    <div class="form">
+        <form class="form-group" method="post">
+            @Html.LabelFor(x => x.Title)
+            @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+            <br />
+            @Html.LabelFor(x => x.Content)
+            @Html.TextAreaFor(x => x.Content, new { @class = "form-control" })
+            <br />
+            <input class="btn btn-success" type="submit" name="" value="Ekle" />
+        </form>
+    </div>
+</div>
+
+

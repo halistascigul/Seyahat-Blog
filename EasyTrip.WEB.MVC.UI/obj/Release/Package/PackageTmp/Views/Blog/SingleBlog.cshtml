@@ -1,0 +1,57 @@
+﻿@model Blog
+@{
+    ViewBag.Title = "SingleBlog";
+}
+
+<div class="single">
+    <div class="container">
+        <div class="col-md-8 single-main">
+            <div class="single-grid">
+                <img src="@Model.Images[0].PhotoUrl" alt="@Model.Title" />
+                <p>
+                    @Model.Content
+                </p>
+            </div>
+            @Html.Action("AddComment","Blog")
+        </div>
+
+        <div class="col-md-4 side-content">
+            <div class="recent">
+                <h3>Son Bloglarım</h3>
+                <ul>
+                    <li><a href="#">Aliquam tincidunt mauris</a></li>
+                    <li><a href="#">Vestibulum auctor dapibus  lipsum</a></li>
+                    <li><a href="#">Nunc dignissim risus consecu</a></li>
+                    <li><a href="#">Cras ornare tristiqu</a></li>
+                </ul>
+            </div>
+            <div class="comments">
+                <h3>Son Yorumlar</h3>
+                <ul>
+                    @foreach (var item in Model.Comments)
+                    {
+                        <li><a href="#">@item.UserFullName</a> on <a href="#">@item.Text</a></li>
+                    }
+                </ul>
+            </div>
+            <div class="clearfix"></div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="clearfix"></div>
+
+        @foreach (var item in Model.Comments)
+        {
+            <ul class="comment-list">
+                <h5 class="post-author_head">Yorum yapan <span class="bg-success text-danger">@item.UserFullName</span> </h5>
+                <li>
+                    <img src="~/SingleWeb/images/avatar.png" class="img-responsive" alt="">
+                    <div class="desc">
+                        <p>@item.Text</p>
+                    </div>
+                    <div class="clearfix"></div>
+                </li>
+            </ul>
+        }
+
+    </div>
+</div>

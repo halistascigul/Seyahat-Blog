@@ -1,0 +1,71 @@
+﻿@model List<Contact>
+@{
+    ViewBag.Title = "ContactList";
+    Layout = "~/Views/Admin/_adminLayout.cshtml";
+}
+
+<div class="table table-responsive">
+    <h2 class="text-center" style="margin:25px; border:groove;">İletişim Listesi</h2>
+
+    @if (TempData["DeleteContact"] != null)
+    {
+        if ((bool)TempData["DeleteContact"] == true)
+        {
+            <h4>İletişim silme işlemi <span class="text-success text-center">BAŞARILI</span></h4>
+        }
+        else
+        {
+            <h4>İletişim silme işlemi <span class="text-warning text-center">HATALI!!</span></h4>
+        }
+    }
+    @if (TempData["UpdateContact"] != null)
+    {
+        if ((bool)TempData["UpdateContact"] == true)
+        {
+            <h4>
+                İletişim güncelleme <span class="text-success text-center">BAŞARILI</span>
+            </h4>
+        }
+        else
+        {
+            <h4>İletişim güncelleme <span class="text-danger text-center">BAŞARISIZ!!!</span></h4>
+        }
+    }
+    @if (TempData["InsertContact"] != null)
+    {
+        if ((bool)TempData["InsertContact"] == true)
+        {
+            <h4>
+                İletişim ekleme <span class="text-success text-center">BAŞARILI</span>
+            </h4>
+        }
+        else
+        {
+            <h4>İletişim ekleme <span class="text-danger text-center">BAŞARISIZ!!!</span></h4>
+        }
+    }
+
+    <table class="table table-bordered">
+        <tr>
+            <th>Id</th>
+            <th>Kullanıcı Adı</th>
+            <th>Email</th>
+            <th>Mesaj</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.FullName</td>
+                <td>@item.Email</td>
+                <td>@item.Message</td>
+                <td><a href="@Url.Action("DeleteContact","Admin",new { contactId = item.Id })" class="btn btn-danger">SİL</a></td>
+                <td><a href="@Url.Action("UpdateContact","Admin",new { contactId = item.Id })" class="btn btn-success">GÜNCELLE</a></td>
+            </tr>
+        }
+    </table>
+    <a href="@Url.Action("InsertContact","Admin")" class="btn btn-primary">Yeni Mesaj</a>
+</div>
+

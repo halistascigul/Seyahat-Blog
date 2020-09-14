@@ -1,0 +1,13 @@
+﻿@model List<Blog>
+<div class="padding">
+    <h4>En İyi 10 Yer</h4>
+    <ul class="list list-pad">
+        @{int count = 1; }
+        @foreach (var item in Model)
+        {
+            <li class="list-bg"><span>@count.</span><a href="@Url.Action("SingleBlog","Blog",new { blogId = item.Id })">@item.Title</a></li>
+            count++;
+        }
+    </ul>
+    <a href="@Url.Action("Index","Blog")" class="link1">Tüm Bloglarım</a>
+</div>

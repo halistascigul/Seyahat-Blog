@@ -1,0 +1,12 @@
+D:\4.WebCalismalar\EasyTrip\EasyTrip.Core\bin\Release\EasyTrip.Core.dll.config
+D:\4.WebCalismalar\EasyTrip\EasyTrip.Core\bin\Release\EasyTrip.Core.dll
+D:\4.WebCalismalar\EasyTrip\EasyTrip.Core\bin\Release\EasyTrip.Core.pdb
+D:\4.WebCalismalar\EasyTrip\EasyTrip.Core\bin\Release\EntityFramework.dll
+D:\4.WebCalismalar\EasyTrip\EasyTrip.Core\bin\Release\EntityFramework.SqlServer.dll
+D:\4.WebCalismalar\EasyTrip\EasyTrip.Core\bin\Release\EntityFramework.xml
+D:\4.WebCalismalar\EasyTrip\EasyTrip.Core\bin\Release\EntityFramework.SqlServer.xml
+D:\4.WebCalismalar\EasyTrip\EasyTrip.Core\obj\Release\EasyTrip.Core.csprojAssemblyReference.cache
+D:\4.WebCalismalar\EasyTrip\EasyTrip.Core\obj\Release\EasyTrip.Core.csproj.CoreCompileInputs.cache
+D:\4.WebCalismalar\EasyTrip\EasyTrip.Core\obj\Release\EasyTrip.Core.csproj.CopyComplete
+D:\4.WebCalismalar\EasyTrip\EasyTrip.Core\obj\Release\EasyTrip.Core.dll
+D:\4.WebCalismalar\EasyTrip\EasyTrip.Core\obj\Release\EasyTrip.Core.pdb

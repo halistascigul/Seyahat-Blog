@@ -1,0 +1,21 @@
+﻿<div class="content-form">
+    <h3>Yorum Yap</h3>
+    <form method="post">
+        <input id="blogId" type="text" placeholder="ID" name="BlogId" value="@ViewBag.BlogId" class="form-control hidden" />
+        <input type="text" placeholder="İsim" name="UserFullName" class="form-control" required />
+        <input type="text" placeholder="Email" name="Mail" class="form-control" required />
+        <textarea placeholder="Yorum" name="Text"></textarea>
+        <input id="btn" type="submit" value="GÖNDER" />
+    </form>
+</div>
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script>
+    $("#btn").click(function () {
+        if ($("#blogId").val != null) {
+            $("#blogId").removeClass("hidden")
+        }
+        else {
+            $("#blogId").addClass("hidden")
+        }
+    })
+</script>

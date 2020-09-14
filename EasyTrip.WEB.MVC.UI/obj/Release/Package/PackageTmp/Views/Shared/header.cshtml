@@ -1,0 +1,32 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<div class="header">
+    <div class="wrap">
+        <div class="logo"><a href="/Home/Index"><img src="~/web/images/logo.png" alt="" /></a></div>
+        <div class="con-right">
+            <div class="grid1-l-img">
+                <img src="~/web/images/contact.png" alt="">
+            </div>
+            <div class="grid1-l-desc">
+                <p>İletişim: <a href="tel:05052820197">(505)2820197</a></p>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+<div class="header-bottom">
+    <div class="wrap">
+        <ul id="nav">
+            <li><a href="/Home/Index">Anasayfa</a></li>
+            <li><a class="hsubs" href="/Home/About">Hakkımda</a></li>
+            <li><a class="hsubs" href="@Url.Action("Index","Blog")">Blogum</a></li>
+            <li><a href="@Url.Action("Contact","Home")">İletişim</a></li>
+        </ul>
+    </div>
+</div>

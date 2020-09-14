@@ -1,0 +1,43 @@
+﻿@model List<Blog>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Admin/_adminLayout.cshtml";
+}
+
+<div class="table table-responsive">
+    <h2 class="text-center" style="margin:25px; border:groove;">Blog Listesi</h2>
+
+    @if (TempData["Result"] != null)
+    {
+        if ((bool)TempData["Result"] == true)
+        {
+            <h4>Blog ekleme işlemi <span class="text-success">BAŞARILI</span></h4>
+        }
+        else
+        {
+            <h4>Blog ekleme işlemi <span class="text-warning">HATALI!!</span></h4>
+        }
+    }
+
+    <table class="table table-bordered">
+        <tr>
+            <th>Id</th>
+            <th>Başlık</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+            <th>Blog Detay</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Title</td>
+                <td><a href="@Url.Action("DeleteBlog","Admin",new { blogId = item.Id })" class="btn btn-danger">SİL</a></td>
+                <td><a href="@Url.Action("UpdateBlog","Admin",new { blogId = item.Id })" class="btn btn-success">GÜNCELLE</a></td>
+                <td><a href="@Url.Action("SingleBlog","Blog", new { blogId = item.Id })" class="btn btn-info">DETAY</a></td>
+            </tr>
+        }
+    </table>
+    <a href="@Url.Action("InsertBlog","Admin")" class="btn btn-primary">Yeni Blog</a>
+</div>
+

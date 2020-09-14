@@ -1,0 +1,27 @@
+﻿@model Contact
+@{
+    ViewBag.Title = "UpdateContact";
+    Layout = "~/Views/Admin/_adminLayout.cshtml";
+}
+
+<div class="container">
+    <h2>İletişim Güncelleme</h2>
+    @using (Html.BeginForm("UpdateContact", "Admin", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        @Html.LabelFor(x => x.Id)
+        @Html.TextBoxFor(x => x.Id, new { @class = "form-control", @readonly = "readonly=false" })
+        <br />
+        @Html.LabelFor(x => x.FullName)
+        @Html.TextBoxFor(x => x.FullName, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.Email)
+        @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.Message)
+        @Html.TextAreaFor(x => x.Message, new { @class = "form-control" })
+        <br />
+        <input class="btn btn-success form-control text-white mt-2" type="submit" name="Submit" value="GÜNCELLE" />
+    }
+</div>
+

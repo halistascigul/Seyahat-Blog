@@ -1,0 +1,60 @@
+﻿@model List<Comment>
+@{
+    ViewBag.Title = "CommentList";
+    Layout = "~/Views/Admin/_adminLayout.cshtml";
+}
+
+<div class="table table-responsive">
+    <h2 class="text-center" style="margin:25px; border:groove;">Yorum Listesi</h2>
+
+    @if (TempData["DeleteComment"] != null)
+    {
+        if ((bool)TempData["DeleteComment"] == true)
+        {
+            <h4>Yorum silme işlemi <span class="text-success text-center">BAŞARILI</span></h4>
+        }
+        else
+        {
+            <h4>Yorum silme işlemi <span class="text-warning text-center">HATALI!!</span></h4>
+        }
+    }
+    @if (TempData["UpdateComment"] != null)
+    {
+        if ((bool)TempData["UpdateComment"] == true)
+        {
+            <h4>
+                Yorum güncelleme <span class="text-success text-center">BAŞARILI</span>
+            </h4>
+        }
+        else
+        {
+            <h4>Yorum güncelleme <span class="text-danger text-center">BAŞARISIZ!!!</span></h4>
+        }
+    }
+
+    <table class="table table-bordered">
+        <tr>
+            <th>Id</th>
+            <th>Kullanıcı Adı</th>
+            <th>Email</th>
+            <th>Yorum</th>
+            <th>Blog Adı</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.UserFullName</td>
+                <td>@item.Mail</td>
+                <td>@item.Text</td>
+                <td>@item.Blog.Title</td>
+                <td><a href="@Url.Action("DeleteComment","Admin",new { commentId = item.Id })" class="btn btn-danger">SİL</a></td>
+                <td><a href="@Url.Action("UpdateComment","Admin",new { commentId = item.Id })" class="btn btn-success">GÜNCELLE</a></td>
+            </tr>
+        }
+    </table>
+    <a href="@Url.Action("InsertBlog","Admin")" class="btn btn-primary">Yeni Yorum</a>
+</div>
+
